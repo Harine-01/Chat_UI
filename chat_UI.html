@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Chat UI</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+        }
+        
+        .chat-container {
+            width: 500px;
+            height: 700px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Header */
+        .chat-header {
+            background: #4a6fa5;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        
+        .chat-title {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        
+        /* Messages Area */
+        .messages {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        /* Message Bubbles */
+        .message {
+            max-width: 70%;
+            padding: 10px 15px;
+            border-radius: 15px;
+            line-height: 1.4;
+        }
+        
+        .left {
+            align-self: flex-start;
+            background: #e0e0e0;
+            border-bottom-left-radius: 5px;
+        }
+        
+        .right {
+            align-self: flex-end;
+            background: #4a6fa5;
+            color: white;
+            border-bottom-right-radius: 5px;
+        }
+        
+        /* Input Area */
+        .input-area {
+            padding: 15px;
+            border-top: 1px solid #ddd;
+            display: flex;
+            gap: 10px;
+        }
+        
+        .message-input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            outline: none;
+        }
+        
+        .send-btn {
+            width: 40px;
+            height: 40px;
+            background: #4a6fa5;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: default;
+        }
+        
+        /* User Indicators */
+        .user-label {
+            font-size: 12px;
+            margin-bottom: 5px;
+            color: #666;
+        }
+        
+        .right + .user-label {
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <!-- Header -->
+        <div class="chat-header">
+            <div class="chat-title">ChatWtMe</div>
+        </div>
+        
+        <!-- Messages -->
+        <div class="messages">
+            <!-- First Message -->
+            <div class="user-label">Alex</div>
+            <div class="message left">
+                Hi, how are you doing bro?
+            </div>
+            
+            <!-- Second Message -->
+            <div class="user-label" style="text-align: right;">You</div>
+            <div class="message right">
+                I'm good! Just chilling.
+            </div>
+            
+            <!-- Third Message -->
+            <div class="user-label">Alex</div>
+            <div class="message left">
+                Sounds good. Wanna go camping?
+            </div>
+            
+            <!-- Fourth Message -->
+            <div class="user-label" style="text-align: right;">You</div>
+            <div class="message right">
+                Not really. Maybe next time! Have fun
+            </div>
+
+            <!-- Fifth Message -->
+            <div class="user-label">Alex</div>
+            <div class="message left">
+                Okay bro. Bye then.
+            </div>
+        </div>
+        
+        <!-- Input Area (Static) -->
+        <div class="input-area">
+            <input type="text" class="message-input" value="Type a message..." readonly>
+            <button class="send-btn">→</button>
+        </div>
+    </div>
+</body>
+</html>
